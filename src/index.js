@@ -1,6 +1,8 @@
 import express from 'express';
 import log4js from 'log4js';
 
+import BaseRouter from './routes/index.js';
+
 export const app = express();
 export const logger = log4js.getLogger();
 
@@ -27,3 +29,8 @@ logger.level = 'ALL';
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use('/', BaseRouter);
+app.use(express.static('apidoc'));
+app.get('/', (req, res) => {
+  res.render('index.html');
+});
