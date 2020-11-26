@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon",
     "start:production": "node ./dist/server.js",
-    "api" : "apidoc -i src/ -o apidoc",
+    "api": "apidoc -i src/ -o apidoc",
     "lint": "eslint src/**/*.js",
     "lint:fix": "yarn lint --fix"
   },
