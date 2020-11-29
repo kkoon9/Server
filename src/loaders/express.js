@@ -1,4 +1,5 @@
 import express from 'express';
+import api from '../routes/index.js';
 
 export default (app) => {
   /**
@@ -11,7 +12,7 @@ export default (app) => {
   app.head('/health', (req, res) => {
     res.status(200).end();
   });
-
+  app.use('/', api);
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 };
