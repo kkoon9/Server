@@ -17,12 +17,21 @@ const userSchema = new mongoose.Schema({
     match: [
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
       'Please add a valid email'
-    ]
+    ],
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
   },
   profileImage: {
     type: String,
     required: true
   },
+  isPremium: {
+    type: Boolean,
+    required: true
+  }
 }, {
   timestamps: true
 });

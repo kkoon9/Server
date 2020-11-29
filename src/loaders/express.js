@@ -1,5 +1,5 @@
 import express from 'express';
-import api from '../routes/index.js';
+import api from '../apis/routes/index.js';
 
 export default (app) => {
   /**
