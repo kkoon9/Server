@@ -13,7 +13,7 @@ const router = express.Router();
  * @apiSuccess {String} lastname  Lastname of the User.
  */
 router.get('/user/:id', (req, res) => {
-  res.json(req.body);
+  res.json(req.params.id);
 });
 
 export default router;
