@@ -2,13 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import mongoose from 'mongoose';
 import config from '../config.js';
-import Logger from '../loaders/logger';
+import Logger from '../loaders/logger.js';
+// Load models
+import Sprint from '../models/sprintModel.js';
+import User from '../models/userModel.js';
 
 const { url } = config.database;
-
-// Load models
-const Sprint = require('../models/sprintModel');
-const User = require('../models/userModel');
 
 // Connect to DB
 mongoose.connect(url, {
@@ -16,6 +15,7 @@ mongoose.connect(url, {
   useCreateIndex: true,
   useUnifiedTopology: true,
 });
+Logger.info('✌️ [Seeder] DB loaded and connected!');
 
 // Read JSON files
 const sprints = JSON.parse(
@@ -35,6 +35,7 @@ const importData = async () => {
     process.exit();
   } catch (err) {
     Logger.error('💥 Data Imported Error');
+    Logger.error(err);
     process.exit();
   }
 };
@@ -49,6 +50,7 @@ const deleteData = async () => {
     process.exit();
   } catch (err) {
     Logger.error('💥 Data Imported Error');
+    Logger.error(err);
     process.exit();
   }
 };
