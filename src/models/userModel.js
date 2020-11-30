@@ -1,12 +1,6 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    required: true,
-    unique: true,
-    index: true
-  },
   nickname: {
     type: String,
     required: [true, 'Please add a nickname']
