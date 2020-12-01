@@ -1,5 +1,6 @@
 import express from 'express';
 import api from '../apis/routes/index.js';
+import errorHandler from './error.js';
 
 export default (app) => {
   /**
@@ -13,6 +14,7 @@ export default (app) => {
     res.status(200).end();
   });
   app.use('/', api);
+  app.use(errorHandler);
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 };

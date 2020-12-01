@@ -20,6 +20,10 @@ const SprintSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  progress: { // 현재 진행 중인 스프린트인지
+    type: Boolean,
+    default: true,
+  },
   percentAverage: { // 평균 달성률
     type: Number,
     required: true,
