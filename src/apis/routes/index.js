@@ -1,4 +1,5 @@
 import express from 'express';
+import sprint from './sprints.js';
 
 const router = express.Router();
 
@@ -15,5 +16,7 @@ const router = express.Router();
 router.get('/user/:id', (req, res) => {
   res.json(req.params.id);
 });
+
+router.use('/sprint', sprint);
 
 export default router;
