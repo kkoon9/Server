@@ -1,6 +1,5 @@
 import express from 'express';
 import SprintService from '../../services/sprint.js';
-import ErrorResponse from '../../modules/errorResponse.js';
 import asyncHandler from '../../modules/async.js';
 
 const router = express.Router();
