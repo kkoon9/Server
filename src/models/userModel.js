@@ -17,6 +17,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  isNotice: { // 알람 여부
+    type: Boolean,
+    default: false,
+  },
 }, {
   timestamps: true
 });

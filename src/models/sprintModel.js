@@ -20,10 +20,6 @@ const SprintSchema = new mongoose.Schema({
   question: { // 질문들
     type: [String],
   },
-  isNotice: { // 알람 여부
-    type: Boolean,
-    default: false,
-  },
   progress: { // 현재 진행 중인 스프린트인지
     type: Boolean,
     default: true,
