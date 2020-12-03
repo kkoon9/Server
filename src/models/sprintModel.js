@@ -13,6 +13,10 @@ const SprintSchema = new mongoose.Schema({
     type: Date,
     required: true, // sequelize : AllowNull
   },
+  nextReviewDate: {
+    type: Date,
+    required: true, // sequelize : AllowNull
+  },
   question: { // 질문들
     type: [String],
   },
