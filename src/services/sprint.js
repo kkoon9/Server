@@ -4,7 +4,7 @@ export default {
   async HomeView(user) {
     const sprintRecord = await SprintModel.findOne({
       user: user.id
-    });
+    }).select('-review -question');
     // If the user is not an admin, they can only add one bootcamp
     if (sprintRecord && !sprintRecord.progress) {
       return { success: false, message: 'falsetest', data: null };
