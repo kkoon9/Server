@@ -6,19 +6,19 @@ const SprintSchema = new mongoose.Schema({
     ref: 'user',
   },
   startTime: { // 스프린트 시작 날짜
-    type: Date,
+    type: String,
     required: true,
   },
   endTime: {
-    type: Date,
+    type: String,
+    required: true, // sequelize : AllowNull
+  },
+  nextReviewTime: {
+    type: String,
     required: true, // sequelize : AllowNull
   },
   question: { // 질문들
     type: [String],
-  },
-  isNotice: { // 알람 여부
-    type: Boolean,
-    default: false,
   },
   progress: { // 현재 진행 중인 스프린트인지
     type: Boolean,
@@ -49,7 +49,7 @@ const SprintSchema = new mongoose.Schema({
   }],
   review: [{
     date: {
-      type: Date,
+      type: String,
       required: true,
     },
     percent: {
