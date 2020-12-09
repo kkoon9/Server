@@ -11,4 +11,7 @@ export default {
   SPRINT_READ_SUCCESS: '현재 스프린트 정보 조회에 성공했습니다.',
   SPRINT_READ_FAIL: '현재 스프린트 정보 조회에 실패했습니다.',
   NO_SPRINT: '현재 진행중인 스프린트가 없습니다.',
+  SPRINT_CREATE_SUCCESS: '스프린트 추가에 성공했습니다.',
+  SPRINT_CREATE_FAIL: '스프린트 추가에 실패했습니다.',
+  
 };

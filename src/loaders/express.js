@@ -13,8 +13,8 @@ export default (app) => {
   app.head('/health', (req, res) => {
     res.status(200).end();
   });
-  app.use('/', api);
-  app.use(errorHandler);
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+  app.use('/', api);
+  app.use(errorHandler);
 };
