@@ -24,7 +24,7 @@ const SprintSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  percentAverage: { // 평균 달성률
+  totalPercentage: { // 평균 달성률
     type: Number,
     required: true,
     default: 0,
@@ -34,11 +34,11 @@ const SprintSchema = new mongoose.Schema({
     required: true,
   },
   goal: [{
-    name: { // 목표 이름
+    title: { // 목표 이름
       type: String,
       required: true
     },
-    percent: { // 목표 달성률
+    percentage: { // 목표 달성률
       type: Number,
       required: true,
       default: 0,
@@ -48,11 +48,11 @@ const SprintSchema = new mongoose.Schema({
     },
   }],
   review: [{
-    date: {
+    reviewTime: {
       type: String,
       required: true,
     },
-    percent: {
+    averageAchievement: {
       type: Number,
       required: true
     },
