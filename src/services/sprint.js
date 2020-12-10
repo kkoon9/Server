@@ -19,6 +19,5 @@ export default {
       return { success: false, message: message.SPRINT_CREATE_FAIL, data: null };
     }
     return { success: true, message: message.SPRINT_CREATE_SUCCESS, data: sprintRecord };
-
-  }
+  },
 };

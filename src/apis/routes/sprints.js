@@ -1,6 +1,7 @@
 import express from 'express';
 import SprintService from '../../services/sprint.js';
 import asyncHandler from '../../modules/async.js';
+import date from '../../modules/date.js';
 
 const router = express.Router();
 
@@ -46,7 +47,10 @@ router.post('/',
     sprintDTO.goal = await sprintDTO.goals.map((g) => {
       return {title: g, percentage:0, socre:[]}
     });
-    console.log(sprintDTO.goal);
+    const review = await date.getReviewDate(sprintDTO.nextReviewTime, sprintDTO.endTime, sprintDTO.day);
+    sprintDTO.review = await review.map((date) => {
+      return {reviewTime: date, averageAchievement:0, comments:[]}
+    });
     // Call to service layer.
     // Abstraction on how to access the data layer and the business logic.
     const { success, message, data } = await SprintService.CreateService(sprintDTO);
