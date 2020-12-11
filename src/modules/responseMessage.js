@@ -13,5 +13,8 @@ export default {
   NO_SPRINT: '현재 진행중인 스프린트가 없습니다.',
   SPRINT_CREATE_SUCCESS: '스프린트 추가에 성공했습니다.',
   SPRINT_CREATE_FAIL: '스프린트 추가에 실패했습니다.',
-  
+  SPRINT_SCORE_SUCCESS: '스프린트 점수 입력에 성공했습니다.',
+  SPRINT_SCORE_FAIL: '스프린트 점수 입력에 실패했습니다.',
+  SPRINT_REVIEW_READ_SUCCESS: '해당 스프린트의 회고 정보 조회에 성공했습니다.',
+  SPRINT_REVIEW_READ_FAIL: '해당 스프린트의 회고 정보 조회에 실패했습니다.',
 };

@@ -36,5 +36,20 @@ export default {
       nextTime = await this.getFormatDate(nextDate);
     }
     return reviewDateArray;
-  }
+  },
+
+  async getScoreDateMap(startTime, endTime) {
+    const initScore = -1;
+    const scoreDateArray = [[startTime, initScore]];
+    let nextDate = this.getDateType(startTime);
+    nextDate.setDate(nextDate.getDate() + 1);
+    let nextTime = await this.getFormatDate(nextDate);
+    while(nextTime <= endTime ) {
+      scoreDateArray.push([nextTime, initScore]);
+      nextDate = this.getDateType(nextTime);
+      nextDate.setDate(nextDate.getDate() + 1);
+      nextTime = await this.getFormatDate(nextDate);
+    }
+    return new Map(scoreDateArray);
+  },
 };

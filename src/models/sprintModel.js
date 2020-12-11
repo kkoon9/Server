@@ -44,7 +44,8 @@ const SprintSchema = new mongoose.Schema({
       default: 0,
     },
     score: {
-      type: [Number],
+      type: Map,
+      of: String,
     },
   }],
   review: [{
